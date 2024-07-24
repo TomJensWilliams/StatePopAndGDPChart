@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="device-width, initial-scale=1" />
+        <title>State Populations And GDPs</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <style>
+            .side-by-side {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            .side-by-side > * {
+            flex: 1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="side-by-side">
+            <div>
+                <h2>Population And GDP Chart</h2>
+                <canvas id="firstChart" style="width:100%;max-width:700px"></canvas>
+            </div>
+            <div>
+                <h2>Population And GDP Chart (Excluding Largest States)</h2>
+                <canvas id="thirdChart" style="width:100%;max-width:700px"></canvas>
+            </div>
+        </div>
+        <div class="side-by-side">
+            <div>
+                <h2>Population And GDP Over Population Chart</h2>
+                <canvas id="secondChart" style="width:100%;max-width:700px"></canvas>
+            </div>
+            <div>
+                <h2>Population And GDP Over Population Chart (Excluding Largest States)</h2>
+                <canvas id="fourthChart" style="width:100%;max-width:700px"></canvas>
+            </div>
+        </div>
+        <script>
+            const xyValues = [
+				{x:1031890, y:3131},
+				{x:12961683, y:45453},
+				{x:9290841, y:37270},
+				{x:11029227, y:38922},
+				{x:3617176, y:14918},
+				{x:7001399, y:26036},
+				{x:6180253, y:21820},
+				{x:5373555, y:19088},
+				{x:1402054, y:6629},
+				{x:8715698, y:31599},
+				{x:19571216, y:78480},
+				{x:10835491, y:36923},
+				{x:1095962, y:3769},
+				{x:647464, y:2739},
+				{x:4526154, y:14032},
+				{x:7126489, y:31182},
+				{x:11785935, y:43494},
+				{x:4573749, y:16852},
+				{x:6862199, y:23175},
+				{x:2939690, y:9777},
+				{x:12549689, y:48777},
+				{x:5108468, y:16927},
+				{x:1395722, y:6361},
+				{x:6196156, y:21785},
+				{x:3067732, y:10527},
+				{x:10037261, y:35272},
+				{x:22610726, y:94747},
+				{x:30503301, y:118352},
+				{x:3207004, y: 10993},
+				{x:5910955, y:21349},
+				{x:38965193, y:172686},
+				{x:5737915, y:21459},
+				{x:4233358, y:14627},
+				{x:2940546, y:10795},
+				{x:1770071, y:5529},
+				{x:3194176, y:12961},
+				{x:1978379, y:6719},
+				{x:5877610, y:23130},
+				{x:783926, y:3094},
+				{x:919318, y:3990},
+				{x:1132812, y:3946},
+				{x:7812880, y:41063},
+				{x:1964726, y:7407},
+				{x:584057, y:2292},
+				{x:3417734, y:16465},
+				{x:4053824, y:12943},
+				{x:2114371, y:5784},
+				{x:7431344, y:28172},
+				{x:733406, y:2542},
+				{x:1435138, y:6142}
+            ];
+            new Chart("firstChart", {
+                type: "scatter",
+                data: {
+                    datasets: [{
+                        pointRadius: 4,
+                        pointBackgroundColor: "rgb(0,0,255)",
+                        data: xyValues
+                    }]
+                },
+                options: {
+                    legend: {display:false},
+                    scales: {
+                        xAxes: [{ticks: {min: 580000, max: 39000000}}],
+                        yAxes: [{ticks: {min: 1500, max: 173000}}],
+                    }
+                }
+            });
+            new Chart("thirdChart", {
+                type: "scatter",
+                data: {
+                    datasets: [{
+                        pointRadius: 4,
+                        pointBackgroundColor: "rgb(0,0,255)",
+                        data: xyValues
+                    }]
+                },
+                options: {
+                    legend: {display:false},
+                    scales: {
+                        xAxes: [{ticks: {min: 580000, max: 13000000}}],
+                        yAxes: [{ticks: {min: 1500, max: 49000}}],
+                    }
+                }
+            });
+            <!--  -->
+            const xModifiedyValues = [
+				{x:1031890, y:0.003034238145538769},
+				{x:12961683, y:0.0035067205393003362},
+				{x:9290841, y:0.004011477540084908},
+				{x:11029227, y:0.0035289871175921937},
+				{x:3617176, y:0.0041242118160686675},
+				{x:7001399, y:0.003718685365596219},
+				{x:6180253, y:0.0035305997990697146},
+				{x:5373555, y:0.003552210780386541},
+				{x:1402054, y:0.004728063255766183},
+				{x:8715698, y:0.0036255271809555586},
+				{x:19571216, y:0.004009970560848135},
+				{x:10835491, y:0.0034075982343578152},
+				{x:1095962, y:0.003438987848118822},
+				{x:647464, y:0.004230351031099798},
+				{x:4526154, y:0.003100203837518564},
+				{x:7126489, y:0.004375506648505316},
+				{x:11785935, y:0.003690330890166966},
+				{x:4573749, y:0.003684504768407711},
+				{x:6862199, y:0.0033771973094921903},
+				{x:2939690, y:0.0033258608900938536},
+				{x:12549689, y:0.003886709861893789},
+				{x:5108468, y:0.00331351786876222},
+				{x:1395722, y:0.004557497839827702},
+				{x:6196156, y:0.00351588952892729},
+				{x:3067732, y:0.0034315253092512643},
+				{x:10037261, y:0.0035141060893006566},
+				{x:22610726, y:0.004190356382187816},
+				{x:30503301, y:0.0038799735149976063},
+				{x:3207004, y:0.0034278098811226926},
+				{x:5910955, y:0.0036117683183174293},
+				{x:38965193, y:0.004431801479848951},
+				{x:5737915, y:0.0037398602105468623},
+				{x:4233358, y:0.003455176717867943},
+				{x:2940546, y:0.0036710869341952143},
+				{x:1770071, y:0.0031236035164691135},
+				{x:3194176, y:0.00405769750946723},
+				{x:1978379, y:0.0033962147798778696},
+				{x:5877610, y:0.00393527301062847},
+				{x:783926, y:0.0039468011011243405},
+				{x:919318, y:0.004340173911530069},
+				{x:1132812, y:0.0034833670547275274},
+				{x:7812880, y:0.005255808357481492},
+				{x:1964726, y:0.003769991337214451},
+				{x:584057, y:0.0039242745143025426},
+				{x:3417734, y:0.004817519444169733},
+				{x:4053824, y:0.0031927878467343427},
+				{x:2114371, y:0.0027355653288850443},
+				{x:7431344, y:0.003790969708844053},
+				{x:733406, y:0.00346602018527255},
+				{x:1435138, y:0.004279727803179903}
+            ];
+            new Chart("secondChart", {
+                type: "scatter",
+                data: {
+                    datasets: [{
+                        pointRadius: 4,
+                        pointBackgroundColor: "rgb(0,0,255)",
+                        data: xModifiedyValues
+                    }]
+                },
+                options: {
+                    legend: {display:false},
+                    scales: {
+                        xAxes: [{ticks: {min: 580000, max: 39000000}}],
+                        yAxes: [{ticks: {min: 0.00250, max: 0.00550}}],
+                    }
+                }
+            });
+            new Chart("fourthChart", {
+                type: "scatter",
+                data: {
+                    datasets: [{
+                        pointRadius: 4,
+                        pointBackgroundColor: "rgb(0,0,255)",
+                        data: xModifiedyValues
+                    }]
+                },
+                options: {
+                    legend: {display:false},
+                    scales: {
+                        xAxes: [{ticks: {min: 580000, max: 13000000}}],
+                        yAxes: [{ticks: {min: 0.00250, max: 0.00550}}],
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

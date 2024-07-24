@@ -1,0 +1,53 @@
+// State Name, Population, GDP
+// Source One: https://www.statsamerica.org/sip/rank_list.aspx?rank_label=pop1&ct=S18
+// Source Two: https://www.statsamerica.org/sip/rank_list.aspx?rank_label=gsp2_a&item_in=35&ct=S18
+Delaware, 1031890, 3131
+Pennsylvania, 12961683, 45453
+New Jersey, 9290841, 37270
+Georgia, 11029227, 38922
+Connecticut, 3617176, 14918
+Massachusetts, 7001399, 26036
+Maryland, 6180253, 21820
+South Carolina, 5373555, 19088
+New Hampshire, 1402054, 6629
+Virginia, 8715698, 31599
+New York, 19571216, 78480
+North Carolina, 10835491, 36923
+Rhode Island, 1095962, 3769
+Vermont, 647464, 2739
+Kentucky, 4526154, 14032
+Tennessee, 7126489, 31182
+Ohio, 11785935, 43494
+Louisiana, 4573749, 16852
+Indiana, 6862199, 23175
+Mississippi, 2939690, 9777
+Illinois, 12549689, 48777
+Alabama, 5108468, 16927
+Maine, 1395722, 6361
+Missouri, 6196156, 21785
+Arkansas, 3067732, 10527
+Michigan, 10037261, 35272
+Florida, 22610726, 94747
+Texas, 30503301, 118352
+Iowa, 3207004,  10993
+Wisconsin, 5910955, 21349
+California, 38965193, 172686
+Minnesota, 5737915, 21459
+Oregon, 4233358, 14627
+Kansas, 2940546, 10795
+West Virginia, 1770071, 5529
+Nevada, 3194176, 12961
+Nebraska, 1978379, 6719
+Colorado, 5877610, 23130
+North Dakota, 783926, 3094
+South Dakota, 919318, 3990
+Montana, 1132812, 3946
+Washington, 7812880, 41063
+Idaho, 1964726, 7407
+Wyoming, 584057, 2292
+Utah, 3417734, 16465
+Oklahoma, 4053824, 12943
+New Mexico, 2114371, 5784
+Arizona, 7431344, 28172
+Alaska, 733406, 2542
+Hawaii, 1435138, 6142
